@@ -10,7 +10,8 @@ from utils.misc import *
 from utils.reconstruct import *
 from utils.sample import *
 
-from utils.protein_ligand import PDBProtein, parse_sdf_file
+
+from utils.parseFile import parse_sdf_file
 from utils.data import torchify_dict
 
 
