@@ -1,10 +1,10 @@
 model:
   type: diffusion # dsm and diffusion
-  network: EDiffMG
+  network: MDMFullDP
   hidden_dim: 256
-  num_convs: 6
-  num_convs_local: 6
-  cutoff: 2
+  num_convs: 7
+  num_convs_local: 7
+  cutoff: 2.0
   mlp_act: relu
   beta_schedule: sigmoid
   beta_start: 1.e-7
@@ -18,11 +18,15 @@ model:
   soft_edge: True
   norm_coors: True
   m_dim: 128
+  context: None
+  vae_context: False
   num_atom: 6
+  caFilter_per_block: 4
+
 
 train:
-  seed: 2021
-  batch_size: 128
+  seed: 2024
+  batch_size: 64
   val_freq: 100
   max_iters: 500
   max_grad_norm: 10.0
@@ -54,5 +58,3 @@ train:
       num_fake: 50
       pos_real_std: 0.05
       pos_fake_std: 2.0
-
-
